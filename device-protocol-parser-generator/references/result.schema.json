@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safe-link.local/schema/parser-result-1.0.json",
+  "type": "object",
+  "required": ["protocolId", "protocolVersion", "messageType", "parseStatus", "properties", "warnings", "errors"],
+  "properties": {
+    "protocolId": {"type": "string"}, "protocolVersion": {"type": "string"},
+    "messageType": {"type": ["string", "null"]}, "parseStatus": {"enum": ["success", "partial", "failed"]},
+    "properties": {"type": "array", "items": {"type": "object", "required": ["code", "rawValue", "value", "unit"], "properties": {"code": {"type": "string"}, "rawValue": {}, "value": {}, "unit": {"type": ["string", "null"]}, "status": {"type": "string"}}}},
+    "warnings": {"type": "array", "items": {"$ref": "#/$defs/diagnostic"}},
+    "errors": {"type": "array", "items": {"$ref": "#/$defs/diagnostic"}}
+  },
+  "$defs": {"diagnostic": {"type": "object", "required": ["code", "message"], "properties": {"code": {"type": "string"}, "message": {"type": "string"}, "byteOffset": {"type": "integer"}, "registerAddress": {"type": "integer"}, "jsonPath": {"type": "string"}, "expected": {}, "actual": {}}}}
+}

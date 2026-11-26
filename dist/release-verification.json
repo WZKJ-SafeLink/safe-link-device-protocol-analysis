@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "documentExtraction": {
+    "binaryTable": "passed",
+    "jsonProtocol": "passed",
+    "modbusTable": "passed"
+  },
+  "python": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "java": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "platformPackages": {
+    "codexOfflineSmoke": "passed",
+    "workbuddyOfflineSmoke": "passed",
+    "codexImport": "not_run",
+    "workbuddyImport": "not_run"
+  },
+  "environment": {
+    "python": "3.11.5",
+    "javaTarget": "17",
+    "dependenciesReadyOffline": "Maven plugins/JUnit must be cached"
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "设备协议解析器生成器"
+  short_description: "从设备协议资料生成可离线运行的 Java 或 Python 解析器"
+  default_prompt: "使用 $device-protocol-parser-generator 根据附件中的厂家协议生成并验证离线解析器。"

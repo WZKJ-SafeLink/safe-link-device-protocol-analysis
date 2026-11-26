@@ -1,0 +1,7 @@
+[
+  {"id":"BIN-01","payloadKind":"hex","payload":"01 02 58 5F","expectedSource":"fictional-golden","expected":{"parseStatus":"success","messageType":"telemetry","properties":{"level":{"rawValue":600,"value":6,"unit":"m"},"battery":{"rawValue":95,"value":95,"unit":"%"}},"errorCodes":[]}},
+  {"id":"BIN-02","payloadKind":"hex","payload":"01 02 58","expectedSource":"fictional-golden","expected":{"parseStatus":"failed","messageType":"telemetry","properties":{},"errorCodes":["FRAME_TRUNCATED"]}},
+  {"id":"JSON-01","payloadKind":"json","payload":{"id":"00123","properties":[{"name":"batt","value":95},{"name":"level","value":600}]},"expectedSource":"fictional-golden","expected":{"parseStatus":"success","messageType":"json-telemetry","properties":{"deviceId":{"rawValue":"00123","value":"00123","unit":null},"battery":{"rawValue":95,"value":95,"unit":"%"},"level":{"rawValue":600,"value":6,"unit":"m"}},"errorCodes":[]}},
+  {"id":"REG-01","payloadKind":"modbus","payload":{"registerType":"holding","startAddress":0,"registers":[1,2]},"expectedSource":"fictional-golden","expected":{"parseStatus":"partial","messageType":"registers","properties":{"counter":{"rawValue":65538,"value":65538,"unit":null}},"errorCodes":[]}},
+  {"id":"REG-02","payloadKind":"modbus","payload":{"registerType":"holding","startAddress":2,"registers":[16320,0]},"expectedSource":"fictional-golden","expected":{"parseStatus":"failed","messageType":"registers","properties":{},"errorCodes":["REGISTER_MISSING"]}}
+]

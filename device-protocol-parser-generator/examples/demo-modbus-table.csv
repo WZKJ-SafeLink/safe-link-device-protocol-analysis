@@ -1,0 +1,3 @@
+显示地址,实际地址,寄存器类型,数据类型,寄存器数,字序,字节序,字段
+40001,0,holding,uint32,2,high-first,big,counter
+40003,2,holding,float32,2,high-first,big,pressure

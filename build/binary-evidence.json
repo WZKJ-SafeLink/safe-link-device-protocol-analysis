@@ -1,0 +1,135 @@
+{
+  "file": "demo-binary-table.csv",
+  "sha256": "5bcfa92aa0c441d9e4a69cacfc35091f4dc7923aa3c9dfae43ed39b6e8ab6b60",
+  "records": [
+    {
+      "location": "row 1 cell 1",
+      "text": "消息"
+    },
+    {
+      "location": "row 1 cell 2",
+      "text": "偏移"
+    },
+    {
+      "location": "row 1 cell 3",
+      "text": "长度"
+    },
+    {
+      "location": "row 1 cell 4",
+      "text": "类型"
+    },
+    {
+      "location": "row 1 cell 5",
+      "text": "端序"
+    },
+    {
+      "location": "row 1 cell 6",
+      "text": "倍率"
+    },
+    {
+      "location": "row 1 cell 7",
+      "text": "单位"
+    },
+    {
+      "location": "row 1 cell 8",
+      "text": "说明"
+    },
+    {
+      "location": "row 2 cell 1",
+      "text": "telemetry"
+    },
+    {
+      "location": "row 2 cell 2",
+      "text": "0"
+    },
+    {
+      "location": "row 2 cell 3",
+      "text": "1"
+    },
+    {
+      "location": "row 2 cell 4",
+      "text": "uint8"
+    },
+    {
+      "location": "row 2 cell 5",
+      "text": "-"
+    },
+    {
+      "location": "row 2 cell 6",
+      "text": "1"
+    },
+    {
+      "location": "row 2 cell 7",
+      "text": "-"
+    },
+    {
+      "location": "row 2 cell 8",
+      "text": "01 表示上报"
+    },
+    {
+      "location": "row 3 cell 1",
+      "text": "telemetry"
+    },
+    {
+      "location": "row 3 cell 2",
+      "text": "1"
+    },
+    {
+      "location": "row 3 cell 3",
+      "text": "2"
+    },
+    {
+      "location": "row 3 cell 4",
+      "text": "uint16"
+    },
+    {
+      "location": "row 3 cell 5",
+      "text": "big"
+    },
+    {
+      "location": "row 3 cell 6",
+      "text": "0.01"
+    },
+    {
+      "location": "row 3 cell 7",
+      "text": "m"
+    },
+    {
+      "location": "row 3 cell 8",
+      "text": "液位"
+    },
+    {
+      "location": "row 4 cell 1",
+      "text": "telemetry"
+    },
+    {
+      "location": "row 4 cell 2",
+      "text": "3"
+    },
+    {
+      "location": "row 4 cell 3",
+      "text": "1"
+    },
+    {
+      "location": "row 4 cell 4",
+      "text": "uint8"
+    },
+    {
+      "location": "row 4 cell 5",
+      "text": "-"
+    },
+    {
+      "location": "row 4 cell 6",
+      "text": "1"
+    },
+    {
+      "location": "row 4 cell 7",
+      "text": "%"
+    },
+    {
+      "location": "row 4 cell 8",
+      "text": "电量"
+    }
+  ],
+  "security": "data-only; macros, formulas and embedded code were not executed"
+}

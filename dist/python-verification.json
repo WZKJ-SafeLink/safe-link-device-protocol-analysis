@@ -1,0 +1,225 @@
+{
+  "language": "python",
+  "generatedAt": "2026-11-26T04:20:37.800968+00:00",
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "entries": [
+    {
+      "id": "BIN-01",
+      "inputSource": "examples/demo-vectors.json",
+      "expectedSource": "fictional-golden",
+      "sourceGenerated": "passed",
+      "programExecuted": "passed",
+      "independentExpectedMatched": "passed",
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+        "parser_cli.py",
+        "--hex",
+        "01 02 58 5F"
+      ],
+      "exitCode": 0,
+      "expected": {
+        "parseStatus": "success",
+        "messageType": "telemetry",
+        "properties": {
+          "level": {
+            "rawValue": 600,
+            "value": 6,
+            "unit": "m"
+          },
+          "battery": {
+            "rawValue": 95,
+            "value": 95,
+            "unit": "%"
+          }
+        },
+        "errorCodes": []
+      },
+      "actual": {
+        "parseStatus": "success",
+        "messageType": "telemetry",
+        "properties": {
+          "level": {
+            "rawValue": 600,
+            "value": 6,
+            "unit": "m"
+          },
+          "battery": {
+            "rawValue": 95,
+            "value": 95,
+            "unit": "%"
+          }
+        },
+        "errorCodes": []
+      },
+      "differences": []
+    },
+    {
+      "id": "BIN-02",
+      "inputSource": "examples/demo-vectors.json",
+      "expectedSource": "fictional-golden",
+      "sourceGenerated": "passed",
+      "programExecuted": "passed",
+      "independentExpectedMatched": "passed",
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+        "parser_cli.py",
+        "--hex",
+        "01 02 58"
+      ],
+      "exitCode": 2,
+      "expected": {
+        "parseStatus": "failed",
+        "messageType": "telemetry",
+        "properties": {},
+        "errorCodes": [
+          "FRAME_TRUNCATED"
+        ]
+      },
+      "actual": {
+        "parseStatus": "failed",
+        "messageType": "telemetry",
+        "properties": {},
+        "errorCodes": [
+          "FRAME_TRUNCATED"
+        ]
+      },
+      "differences": []
+    },
+    {
+      "id": "JSON-01",
+      "inputSource": "examples/demo-vectors.json",
+      "expectedSource": "fictional-golden",
+      "sourceGenerated": "passed",
+      "programExecuted": "passed",
+      "independentExpectedMatched": "passed",
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+        "parser_cli.py",
+        "--json",
+        "{\"id\": \"00123\", \"properties\": [{\"name\": \"batt\", \"value\": 95}, {\"name\": \"level\", \"value\": 600}]}"
+      ],
+      "exitCode": 0,
+      "expected": {
+        "parseStatus": "success",
+        "messageType": "json-telemetry",
+        "properties": {
+          "deviceId": {
+            "rawValue": "00123",
+            "value": "00123",
+            "unit": null
+          },
+          "battery": {
+            "rawValue": 95,
+            "value": 95,
+            "unit": "%"
+          },
+          "level": {
+            "rawValue": 600,
+            "value": 6,
+            "unit": "m"
+          }
+        },
+        "errorCodes": []
+      },
+      "actual": {
+        "parseStatus": "success",
+        "messageType": "json-telemetry",
+        "properties": {
+          "deviceId": {
+            "rawValue": "00123",
+            "value": "00123",
+            "unit": null
+          },
+          "battery": {
+            "rawValue": 95,
+            "value": 95,
+            "unit": "%"
+          },
+          "level": {
+            "rawValue": 600,
+            "value": 6,
+            "unit": "m"
+          }
+        },
+        "errorCodes": []
+      },
+      "differences": []
+    },
+    {
+      "id": "REG-01",
+      "inputSource": "examples/demo-vectors.json",
+      "expectedSource": "fictional-golden",
+      "sourceGenerated": "passed",
+      "programExecuted": "passed",
+      "independentExpectedMatched": "passed",
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+        "parser_cli.py",
+        "--modbus",
+        "{\"registerType\": \"holding\", \"startAddress\": 0, \"registers\": [1, 2]}"
+      ],
+      "exitCode": 0,
+      "expected": {
+        "parseStatus": "partial",
+        "messageType": "registers",
+        "properties": {
+          "counter": {
+            "rawValue": 65538,
+            "value": 65538,
+            "unit": null
+          }
+        },
+        "errorCodes": []
+      },
+      "actual": {
+        "parseStatus": "partial",
+        "messageType": "registers",
+        "properties": {
+          "counter": {
+            "rawValue": 65538,
+            "value": 65538,
+            "unit": null
+          }
+        },
+        "errorCodes": []
+      },
+      "differences": []
+    },
+    {
+      "id": "REG-02",
+      "inputSource": "examples/demo-vectors.json",
+      "expectedSource": "fictional-golden",
+      "sourceGenerated": "passed",
+      "programExecuted": "passed",
+      "independentExpectedMatched": "passed",
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+        "parser_cli.py",
+        "--modbus",
+        "{\"registerType\": \"holding\", \"startAddress\": 2, \"registers\": [16320, 0]}"
+      ],
+      "exitCode": 2,
+      "expected": {
+        "parseStatus": "failed",
+        "messageType": "registers",
+        "properties": {},
+        "errorCodes": [
+          "REGISTER_MISSING"
+        ]
+      },
+      "actual": {
+        "parseStatus": "failed",
+        "messageType": "registers",
+        "properties": {},
+        "errorCodes": [
+          "REGISTER_MISSING"
+        ]
+      },
+      "differences": []
+    }
+  ]
+}

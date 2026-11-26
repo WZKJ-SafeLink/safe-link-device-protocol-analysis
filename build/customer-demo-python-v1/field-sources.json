@@ -1,0 +1,44 @@
+[
+  {
+    "message": "telemetry",
+    "field": "level",
+    "documentId": "bin-doc",
+    "location": "row 3"
+  },
+  {
+    "message": "telemetry",
+    "field": "battery",
+    "documentId": "bin-doc",
+    "location": "row 4"
+  },
+  {
+    "message": "json-telemetry",
+    "field": "deviceId",
+    "documentId": "json-doc",
+    "location": "$.payload.id"
+  },
+  {
+    "message": "json-telemetry",
+    "field": "battery",
+    "documentId": "json-doc",
+    "location": "$.fields[0]"
+  },
+  {
+    "message": "json-telemetry",
+    "field": "level",
+    "documentId": "json-doc",
+    "location": "$.fields[1]"
+  },
+  {
+    "message": "registers",
+    "field": "counter",
+    "documentId": "reg-doc",
+    "location": "row 2"
+  },
+  {
+    "message": "registers",
+    "field": "pressure",
+    "documentId": "reg-doc",
+    "location": "row 3"
+  }
+]

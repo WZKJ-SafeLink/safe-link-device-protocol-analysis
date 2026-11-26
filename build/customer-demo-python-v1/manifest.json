@@ -1,0 +1,12 @@
+{
+  "language": "python",
+  "languageVersion": "3.11",
+  "protocolId": "demo-level",
+  "protocolVersion": "D1",
+  "specVersion": "1.0",
+  "entry": "protocol_parser.parse",
+  "buildStatus": "generated",
+  "limitations": [
+    "Safe Link 真实 Schema 与平台导入待客户试点"
+  ]
+}

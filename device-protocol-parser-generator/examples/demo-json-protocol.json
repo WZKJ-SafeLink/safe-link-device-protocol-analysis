@@ -1,0 +1,5 @@
+{
+  "title": "虚构厂家 JSON 上报说明",
+  "payload": {"id": "设备号字符串，保留前导零", "properties": "name/value 数组"},
+  "fields": [{"name": "batt", "type": "integer", "unit": "%"}, {"name": "level", "type": "integer", "scale": "0.01", "unit": "m"}]
+}

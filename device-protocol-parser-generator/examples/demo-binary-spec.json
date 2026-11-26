@@ -1,0 +1,29 @@
+{
+  "specVersion": "1.0", "protocolId": "demo-level", "protocolVersion": "D1",
+  "models": ["DEMO-1"], "inputEncoding": "mixed", "maxPayloadBytes": 256,
+  "documents": [
+    {"id":"bin-doc","file":"demo-binary-table.csv","sourceType":"fictional"},
+    {"id":"json-doc","file":"demo-json-protocol.json","sourceType":"fictional"},
+    {"id":"reg-doc","file":"demo-modbus-table.csv","sourceType":"fictional"}
+  ],
+  "messages": [
+    {"id":"telemetry","inputType":"binary","match":{"offset":0,"bytes":"01"},"length":{"exact":4},"fields":[
+      {"code":"level","source":{"documentId":"bin-doc","location":"row 3"},"selector":{"offset":1,"length":2},"type":"uint16","bitWidth":16,"signed":false,"byteOrder":"big","wordOrder":"none","scale":"0.01","offset":"0","unit":"m","unitStatus":"known","required":true,"confirmed":true},
+      {"code":"battery","source":{"documentId":"bin-doc","location":"row 4"},"selector":{"offset":3,"length":1},"type":"uint8","bitWidth":8,"signed":false,"byteOrder":"big","wordOrder":"none","scale":"1","offset":"0","unit":"%","unitStatus":"known","required":true,"confirmed":true}
+    ]},
+    {"id":"json-telemetry","inputType":"json","fields":[
+      {"code":"deviceId","source":{"documentId":"json-doc","location":"$.payload.id"},"selector":{"path":"id"},"type":"string","scale":"1","offset":"0","unit":null,"unitStatus":"dimensionless","required":true,"confirmed":true},
+      {"code":"battery","source":{"documentId":"json-doc","location":"$.fields[0]"},"selector":{"collectionPath":"properties","matchKey":"name","matchValue":"batt","valueKey":"value"},"type":"integer","scale":"1","offset":"0","unit":"%","unitStatus":"known","required":true,"confirmed":true},
+      {"code":"level","source":{"documentId":"json-doc","location":"$.fields[1]"},"selector":{"collectionPath":"properties","matchKey":"name","matchValue":"level","valueKey":"value"},"type":"integer","scale":"0.01","offset":"0","unit":"m","unitStatus":"known","required":true,"confirmed":true}
+    ]},
+    {"id":"registers","inputType":"modbus","match":{"registerType":"holding"},"fields":[
+      {"code":"counter","source":{"documentId":"reg-doc","location":"row 2"},"selector":{"address":0,"displayAddress":40001,"registerCount":2},"type":"uint32","bitWidth":32,"signed":false,"byteOrder":"big","wordOrder":"high-first","scale":"1","offset":"0","unit":null,"unitStatus":"dimensionless","required":true,"confirmed":true,"registerType":"holding"},
+      {"code":"pressure","source":{"documentId":"reg-doc","location":"row 3"},"selector":{"address":2,"displayAddress":40003,"registerCount":2},"type":"float32","bitWidth":32,"signed":true,"byteOrder":"big","wordOrder":"high-first","scale":"1","offset":"0","unit":"bar","unitStatus":"known","required":false,"confirmed":true,"registerType":"holding"}
+    ]}
+  ],
+  "mappings": [
+    {"source":"deviceId","targetPath":"deviceId","targetType":"string","conversion":null,"contextSource":null,"required":true,"missing":"error","contractVersion":"demo-1"},
+    {"source":"level","targetPath":"data.levelM","targetType":"number","conversion":null,"contextSource":null,"required":true,"missing":"error","contractVersion":"demo-1"}
+  ],
+  "conflicts": []
+}
